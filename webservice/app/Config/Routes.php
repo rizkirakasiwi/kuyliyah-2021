@@ -37,6 +37,7 @@ $routes->get('user/name/(:any)', 'User::getNameByEmail/$1');
 $routes->post('attendance', 'Attendance::doAttendance');
 $routes->get('/user/(:any)', 'User::getUserByEmail/$1');
 $routes->post('/login', 'User::login');
+$routes->get('/student_class/(:any)', 'StudentClass::getClass/$1');
 
 /*
  * --------------------------------------------------------------------

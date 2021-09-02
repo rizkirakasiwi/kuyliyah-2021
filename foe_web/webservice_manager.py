@@ -20,6 +20,11 @@ def login(email, password):
     response = requests.post(url, data=content)
     return response.json()
 
+def get_class(school_code):
+    url = f"{base_url}/student_class/{school_code}"
+    response = requests.get(url)
+    return response.json()
+
 def do_attendance(email):
     current_time = datetime.now()
     current_time = current_time.strftime("%H:%M:%S")

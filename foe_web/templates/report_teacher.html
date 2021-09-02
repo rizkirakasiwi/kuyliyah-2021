@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='report.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='report_teacher.css') }}">
     <title>Foe - Rekapitulasi</title>
 </head>
 <script>
@@ -15,16 +15,8 @@
 <h1>
     <a href="{{url_for('home')}}">Foe</a>
 </h1>
-<form class="report" action="{{ url_for('handle_report') }}" method="post">
-    <p>Rekap Absen Siswa</p>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Kelas</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="student_class">
-            {% for kelas in student_class %}
-                <option value="{{ kelas['id'] }}">{{ kelas['name'] }}</option>
-            {% endfor %}
-        </select>
-    </div>
+<form class="report_teacher" action="{{ url_for('handle_report_teacher' )}}" method="post">
+    <p>Rekap Absen Guru</p>
     <div class="form-group">
         <label for="from_time">Waktu dari</label>
         <input type="date" class="form-control" id="from_time" placeholder="Waktu" name="from_time">

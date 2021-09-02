@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
-  width: 30%;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 3em;
 }
 
 .menu a {
@@ -18,6 +20,32 @@
 
 .menu .attendance {
   margin-right: 1em;
+}
+
+.menu .report {
+  margin-right: 1em;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+}
+
+h1 a {
+  color: #0d6efd;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logout {
+  margin-top: 10em;
+  margin-left: -3em;
+  padding: 0 1em;
+  border-radius: 25px;
+  color: #0d6efd;
+  border: 1px solid;
+  position: fixed;
 }
 
 /* Cool infinite background scrolling animation.

@@ -93,7 +93,7 @@ body::before {
     font-style: normal;
 }
 
-.login {
+.report_teacher {
     overflow: hidden;
     background-color: white;
     padding: 40px 30px 30px 30px;
@@ -113,8 +113,8 @@ body::before {
     box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
 }
 
-.login::before,
-.login::after {
+.report_teacher::before,
+.report_teacher::after {
     content: "";
     position: absolute;
     width: 600px;
@@ -126,7 +126,7 @@ body::before {
     z-index: -1;
 }
 
-.login::before {
+.report_teacher::before {
     left: 40%;
     bottom: -130%;
     background-color: rgba(69, 105, 144, 0.15);
@@ -135,7 +135,7 @@ body::before {
     animation: wawes 6s infinite linear;
 }
 
-.login::after {
+.report_teacher::after {
     left: 35%;
     bottom: -125%;
     background-color: rgba(2, 128, 144, 0.2);
@@ -144,7 +144,7 @@ body::before {
     animation: wawes 7s infinite;
 }
 
-.login>input {
+.report_teacher>input {
     font-family: "Asap", sans-serif;
     display: block;
     border-radius: 5px;
@@ -156,7 +156,13 @@ body::before {
     margin: 15px -10px;
 }
 
-.login>button {
+label {
+    text-align: start;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.report_teacher>button {
     font-family: "Asap", sans-serif;
     cursor: pointer;
     color: #fff;
@@ -174,7 +180,7 @@ body::before {
     transition: background-color 300ms;
 }
 
-.login>button:hover {
+.report_teacher>button:hover {
     background-color: #f24353;
 }
 
@@ -213,16 +219,9 @@ body::before {
     }
 }
 
-a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.6);
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-size: 12px;
-}
-
 h1 {
     font-family: 'Pacifico', cursive;
-    color: #0d6efd;
+    a {
+        text-decoration: none;
+    }
 }
