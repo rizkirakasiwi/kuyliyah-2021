@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-base_url = "http://192.168.1.8:8080"
+base_url = "http://192.168.43.126:8080"
 
 def get_name(email):
     url = f"{base_url}/user/name/{email}"

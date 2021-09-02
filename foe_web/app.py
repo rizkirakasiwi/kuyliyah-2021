@@ -18,6 +18,10 @@ def attendance():
 def home():
     return render_template('home.html')
 
+@app.route('/report')
+def report():
+    return render_template('report.html')
+
 @login_manager.user_loader
 def load_user(email):
     return get_user(email)
@@ -35,7 +39,7 @@ def handle_login():
     if log['code'] == 200:
         # login_user(log)
         print('login berhasil')
-        return redirect(url_for('attendance'))
+        return redirect(url_for('home'))
     else:
         print('login gagal')
         return 'login gagal'
