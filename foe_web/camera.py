@@ -29,6 +29,10 @@ class VideoCamera(object):
         
     def get_frame(self):
         ret, frame = self.video_capture.read()
+        name = "[Unknown]"
+        email = ""
+        attendance = ""
+        
             # read frame
         frame = cv2.flip(frame, 1)
         detect_current_face = face_recognition.face_locations(frame)
@@ -45,24 +49,23 @@ class VideoCamera(object):
         
         for current_face_encoding in current_face_encodings:
             matches = face_recognition.compare_faces(self.known_encode, current_face_encoding)
-            name = "[Unknow]"
             
             face_distances = face_recognition.face_distance(self.known_encode, current_face_encoding)
             best_match_index = np.argmin(face_distances)
             if matches[best_match_index]:
                 email = self.known_email[best_match_index]
                 
-                # get name by email using api request
-                name = get_name(email)
-                
-                # do attendance
-                attendance = do_attendance(email)
+            # get name by email using api request
+            name = get_name(email)
+            # do attendance
+            attendance = do_attendance(email)
+               
 
-                if len(detect_current_face) > 0:
-                    current_face = detect_current_face[0]
-                    cv2.putText(frame, name, (current_face[3]+6, current_face[0]-6), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1.0, (0, 255, 0), 1)
-                    cv2.putText(frame, attendance, (50,50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1.0, (0, 255, 0), 1)
-    
+        if len(detect_current_face) > 0:
+            current_face = detect_current_face[0]
+            cv2.putText(frame, name, (current_face[3]+6, current_face[0]-6), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1.0, (0, 255, 0), 1)
+            cv2.putText(frame, attendance, (50,50), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1.0, (0, 255, 0), 1)
+        
         ret, jpeg = cv2.imencode('.jpg',frame)
         return jpeg.tobytes()
     

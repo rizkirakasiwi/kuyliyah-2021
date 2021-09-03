@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Foe - Home</title>
 </head>
 
@@ -19,6 +20,15 @@
             <a href="{{ url_for('attendance') }}" class="attendance">Absensi Kamera</a>
             <a href="{{ url_for('report') }}" class="report">Rekap Absen Siswa</a>
             <a href="{{ url_for('report_teacher') }}" class="report_teacher">Rekap Absen Guru</a>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 bg-primary">hello</div>
+                <div class="col-md-4 bg-primary">hello</div>
+                <div class="col-md-4 bg-primary">hello</div>
+                <div class="col-md-4 bg-primary">hello</div>
+            </div>
         </div>
 
         <a href="{{ url_for('logout') }}" class="logout">Logout</a>
