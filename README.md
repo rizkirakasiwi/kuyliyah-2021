@@ -1,1 +1,1 @@
-# skripshit-2021
+# kuyliah, 2021
